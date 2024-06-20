@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.component';
@@ -20,6 +21,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatButtonModule,
     MatInputModule,
     MatCardModule,
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()
