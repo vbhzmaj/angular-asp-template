@@ -1,0 +1,6 @@
+@bckndtmp_HostAddress = http://localhost:5244
+
+GET {{bckndtmp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
