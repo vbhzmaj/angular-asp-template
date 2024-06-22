@@ -10,7 +10,11 @@ import { ApiService } from "./api.service";
 export class QuestionComponent {
 
     question = {
-        QuestionTxt:"",
+        questiontxt:"",
+        answertxt:"",
+        wrong1:"",
+        wrong2:"",
+        wrong3:"",
     }
 
     

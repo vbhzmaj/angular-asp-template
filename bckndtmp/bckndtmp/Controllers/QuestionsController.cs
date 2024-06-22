@@ -32,7 +32,7 @@ namespace bckndtmp.Controllers
         [HttpPost]
         public void Post([FromBody]Models.Question question)
         {
-            _quizContext.Questions.Add(new Models.Question() { QuestionTxt = "test questiontxt" });
+            _quizContext.Questions.Add(question);
             _quizContext.SaveChanges();
 
         }
