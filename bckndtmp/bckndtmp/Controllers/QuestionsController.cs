@@ -7,6 +7,16 @@ namespace bckndtmp.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
+
+        readonly QuizContext _quizContext;
+        public QuestionsController(QuizContext context)
+        {
+            this._quizContext = context;
+        }
+
+
+
+
         [HttpGet]
         public IEnumerable<Models.Question> Get()
         {
@@ -22,6 +32,8 @@ namespace bckndtmp.Controllers
         [HttpPost]
         public void Post([FromBody]Models.Question question)
         {
+            _quizContext.Questions.Add(new Models.Question() { QuestionTxt = "test questiontxt" });
+            _quizContext.SaveChanges();
 
         }
 
