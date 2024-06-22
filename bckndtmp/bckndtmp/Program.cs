@@ -1,3 +1,6 @@
+using bckndtmp;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddCors();
 builder.Services.AddMvc();
+builder.Services.AddDbContext<QuizContext>(options =>
+                                            options.UseInMemoryDatabase("quiz"));
 
 var app = builder.Build();
 
