@@ -6,16 +6,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
 
 import { ApiService } from "./api.service";
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.component';
+import { QuestionsComponent } from './questions.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatInputModule,
     MatCardModule,
     FormsModule,
+    MatListModule,
   ],
   providers: [
     provideAnimationsAsync(),

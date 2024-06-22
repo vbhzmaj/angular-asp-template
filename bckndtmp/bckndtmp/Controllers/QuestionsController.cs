@@ -20,11 +20,8 @@ namespace bckndtmp.Controllers
         [HttpGet]
         public IEnumerable<Models.Question> Get()
         {
-            return new Models.Question[] {
-
-                new Models.Question() {QuestionTxt = "Hello"},
-                new Models.Question() {QuestionTxt = "Hi"}
-            };
+            return _quizContext.Questions;
+            
         }
 
 
