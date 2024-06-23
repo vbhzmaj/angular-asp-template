@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace bckndtmp.Controllers
 {
@@ -27,12 +28,26 @@ namespace bckndtmp.Controllers
 
 
         [HttpPost]
-        public void Post([FromBody]Models.Question question)
+        public async Task<IActionResult> Post([FromBody]Models.Question question)
         {
             _quizContext.Questions.Add(question);
-            _quizContext.SaveChanges();
+            await _quizContext.SaveChangesAsync();
+            return Ok(question);
 
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Models.Question question)
+        {
+            if (id != question.Id) {
+                return BadRequest();
+            }
+            
+            _quizContext.Entry(question).State=EntityState.Modified;
+            await _quizContext.SaveChangesAsync();
+            return Ok(question);
+        }
+
 
     }
 }
